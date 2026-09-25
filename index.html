@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Abriendo…</title>
+<style>
+  body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;font-family:system-ui,Arial,sans-serif;background:#fff;color:#222;text-align:center}
+  .s{font-size:40px;color:#F9B90A;letter-spacing:4px}
+  a{color:#1a73e8}
+</style>
+</head>
+<body>
+<div>
+  <div class="s">★★★★★</div>
+  <p>Abriendo…</p>
+  <p id="alt" style="display:none"><a id="link" href="#">Tocá acá si no se abre</a></p>
+</div>
+<script>
+  // Carga destinos.js sin caché, así los cambios se ven enseguida
+  var sc = document.createElement('script');
+  sc.src = 'destinos.js?v=' + Date.now();
+  sc.onload = sc.onerror = function () {
+    var p = (new URLSearchParams(location.search).get('p') || '').trim();
+    if (/^\d$/.test(p)) p = '0' + p;
+    var wa = 'https://wa.me/' + (window.MI_WHATSAPP || '') + '?text=' + encodeURIComponent(window.MENSAJE || '');
+    var dest = (window.PLACAS && window.PLACAS[p]) ? window.PLACAS[p].trim() : '';
+    var url = dest || wa;
+    document.getElementById('link').href = url;
+    document.getElementById('alt').style.display = 'block';
+    location.replace(url);
+  };
+  document.head.appendChild(sc);
+</script>
+</body>
+</html>

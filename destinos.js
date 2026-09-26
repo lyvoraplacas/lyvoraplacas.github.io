@@ -36,5 +36,8 @@ var PLACAS = {
   "18": "",
   "19": "",
   "20": "",
+  // ---- SOLO NFC ----
+  "21": "",
+  "22": "",
   // Para agregar más placas: copiá la última línea y cambiá el número. Ej: "21": "",
 };

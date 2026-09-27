@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Menú</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,800&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#15110e;--bg2:#1f1915;--card:#2a221c;--card2:#342a22;--ink:#fbf4ea;--muted:#b7a693;
+    --accent:#f0a24a;--accent2:#e2553a;--line:rgba(255,236,210,.10);
+    --display:"Fraunces",Georgia,serif;--body:"Outfit",system-ui,-apple-system,"Segoe UI",sans-serif;
+  }
+  *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+  html,body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--body)}
+  body{min-height:100vh;overflow-x:hidden;
+    background:radial-gradient(120% 60% at 50% -10%,#3a2a1d 0%,transparent 60%),radial-gradient(80% 50% at 100% 100%,#2b1712 0%,transparent 60%),var(--bg)}
+  .err{padding:60px 20px;text-align:center;color:var(--muted)}
+
+  /* ---------- Header con profundidad ---------- */
+  header{perspective:800px;padding:34px 18px 8px;text-align:center}
+  .hero{transform-style:preserve-3d;transition:transform .2s ease-out}
+  .hero h1{font-family:var(--display);font-weight:800;font-size:clamp(30px,9vw,46px);line-height:1;margin:0;letter-spacing:-.5px;
+    transform:translateZ(40px);text-shadow:0 2px 0 #000,0 10px 30px rgba(240,162,74,.25)}
+  .hero p{margin:10px 0 0;color:var(--muted);font-size:14px;transform:translateZ(20px)}
+  .info{display:flex;justify-content:center;flex-wrap:wrap;gap:6px 14px;margin-top:10px;font-size:12.5px;color:var(--muted);transform:translateZ(10px)}
+
+  /* ---------- Carrusel 3D de categorías ---------- */
+  .stage{position:relative;height:190px;perspective:900px;margin-top:6px;touch-action:pan-y;user-select:none}
+  .ring{position:absolute;left:50%;top:50%;width:0;height:0;transform-style:preserve-3d;transition:transform .7s cubic-bezier(.2,.8,.2,1)}
+  .face{position:absolute;width:120px;height:132px;left:-60px;top:-66px;border-radius:22px;
+    background:linear-gradient(160deg,var(--card2),var(--card));border:1px solid var(--line);
+    display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;cursor:pointer;
+    box-shadow:0 18px 40px rgba(0,0,0,.45);backface-visibility:hidden;transition:opacity .4s,filter .4s,border-color .4s}
+  .face .ico{font-size:44px;filter:drop-shadow(0 8px 10px rgba(0,0,0,.5));transform:translateZ(30px)}
+  .face span{font-weight:700;font-size:13.5px;text-align:center;padding:0 8px;line-height:1.15}
+  .face.on{border-color:var(--accent);box-shadow:0 18px 40px rgba(0,0,0,.45),0 0 0 1px var(--accent),0 0 40px rgba(240,162,74,.25)}
+  .face.dim{opacity:.35;filter:saturate(.5)}
+  .arrows{display:flex;justify-content:center;gap:14px;margin-top:4px}
+  .arrows button{width:42px;height:42px;border-radius:50%;border:1px solid var(--line);background:var(--bg2);color:var(--ink);font-size:18px;cursor:pointer}
+  .arrows button:active{transform:scale(.92)}
+  .hint{text-align:center;color:var(--muted);font-size:12px;margin-top:6px}
+
+  /* ---------- Lista de productos ---------- */
+  main{max-width:640px;margin:0 auto;padding:12px 16px 120px}
+  .cat-title{font-family:var(--display);font-size:26px;margin:14px 4px 14px;display:flex;align-items:center;gap:10px}
+  .grid{display:grid;gap:14px;perspective:1000px}
+  .item{position:relative;height:118px;transform-style:preserve-3d;cursor:pointer;
+    animation:rise .6s cubic-bezier(.2,.8,.2,1) both}
+  @keyframes rise{from{opacity:0;transform:rotateX(-35deg) translateY(30px)}to{opacity:1;transform:none}}
+  .flip{position:absolute;inset:0;transform-style:preserve-3d;transition:transform .6s cubic-bezier(.2,.8,.2,1)}
+  .item.open .flip{transform:rotateY(180deg)}
+  .side{position:absolute;inset:0;border-radius:18px;padding:16px 18px;backface-visibility:hidden;-webkit-backface-visibility:hidden;
+    background:linear-gradient(150deg,var(--card2),var(--card));border:1px solid var(--line);
+    box-shadow:0 14px 30px rgba(0,0,0,.35);display:flex;align-items:center;gap:14px;overflow:hidden;transform-style:preserve-3d}
+  .side::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none;
+    background:radial-gradient(260px 120px at var(--gx,30%) var(--gy,0%),rgba(255,230,190,.14),transparent 70%)}
+  .front .emo{font-size:40px;flex:none;transform:translateZ(40px);filter:drop-shadow(0 10px 12px rgba(0,0,0,.55))}
+  .front .txt{flex:1;min-width:0;transform:translateZ(25px)}
+  .front b{display:block;font-size:17px;font-weight:700;line-height:1.2}
+  .front small{display:block;color:var(--muted);font-size:12.5px;margin-top:4px}
+  .price{transform:translateZ(50px);font-weight:700;font-size:18px;color:var(--bg);background:linear-gradient(135deg,var(--accent),#ffd08a);
+    padding:8px 12px;border-radius:12px;white-space:nowrap;box-shadow:0 10px 20px rgba(240,162,74,.3)}
+  .tag{display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:var(--accent2);
+    background:rgba(226,85,58,.14);padding:2px 7px;border-radius:6px;margin-left:6px;vertical-align:middle}
+  .back{transform:rotateY(180deg);flex-direction:column;align-items:flex-start;justify-content:center;gap:8px}
+  .back p{margin:0;font-size:14px;color:var(--ink);line-height:1.4}
+  .back .row{display:flex;gap:10px;align-items:center;width:100%;justify-content:space-between}
+  .back a{font-size:13px;font-weight:700;color:var(--bg);background:#25D366;text-decoration:none;padding:8px 12px;border-radius:10px}
+  .back em{font-style:normal;font-weight:700;color:var(--accent)}
+
+  .wa{position:fixed;left:16px;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));max-width:608px;margin:0 auto;display:block;text-align:center;
+    background:#25D366;color:#06260f;text-decoration:none;font-weight:800;padding:16px;border-radius:16px;font-size:16px;
+    box-shadow:0 14px 30px rgba(0,0,0,.45),inset 0 -3px 0 rgba(0,0,0,.15)}
+  footer{text-align:center;font-size:12px;color:var(--muted);padding:26px 0 0}
+  footer a{color:var(--muted)}
+  @media (prefers-reduced-motion:reduce){.ring,.flip,.hero{transition:none}.item{animation:none}}
+</style>
+</head>
+<body>
+<div id="app"><p class="err">Cargando menú…</p></div>
+<script>
+(function(){
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var c=(new URLSearchParams(location.search).get('c')||'demo').toLowerCase().replace(/[^a-z0-9-]/g,'');
+  var s=document.createElement('script'); s.src='menu-'+c+'.js?v='+Date.now();
+  s.onerror=function(){document.getElementById('app').innerHTML='<p class="err">Menú no encontrado.</p>'};
+  s.onload=function(){ if(!window.MENU) return s.onerror(); build(window.MENU); };
+  document.head.appendChild(s);
+
+  function e(t){return String(t==null?'':t).replace(/[&<>"]/g,function(m){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[m]})}
+  function money(M,p){return (M.moneda||'$')+' '+Number(p).toLocaleString('es-AR')}
+  // Separa el emoji inicial del nombre de la categoría ("☕ Cafetería" -> ["☕","Cafetería"])
+  function split(n){var m=String(n).match(/^(\p{Extended_Pictographic}(?:️|‍\p{Extended_Pictographic})*)\s*(.*)$/u);return m?[m[1],m[2]]:['🍽️',n]}
+
+  function build(M){
+    document.title=M.nombre+' · Menú';
+    var cats=M.categorias, n=cats.length, step=360/n, radius=Math.max(150,Math.round(70/Math.tan(Math.PI/n))+40);
+    var h='<header><div class="hero" id="hero"><h1>'+e(M.nombre)+'</h1>'+(M.subtitulo?'<p>'+e(M.subtitulo)+'</p>':'')+
+      '<div class="info">'+(M.direccion?'<span>📍 '+e(M.direccion)+'</span>':'')+(M.horario?'<span>🕒 '+e(M.horario)+'</span>':'')+'</div></div></header>';
+    h+='<div class="stage" id="stage"><div class="ring" id="ring">'+cats.map(function(k,i){var p=split(k.nombre);
+      return '<div class="face" data-i="'+i+'" style="transform:rotateY('+(i*step)+'deg) translateZ('+radius+'px)"><div class="ico">'+p[0]+'</div><span>'+e(p[1])+'</span></div>'}).join('')+'</div></div>';
+    h+='<div class="arrows"><button type="button" id="prev" aria-label="Categoría anterior">‹</button><button type="button" id="next" aria-label="Categoría siguiente">›</button></div>';
+    h+='<div class="hint">Deslizá para girar · Tocá un producto para ver más</div><main id="main"></main>';
+    if(M.whatsapp) h+='<a class="wa" href="https://wa.me/'+e(M.whatsapp)+'?text='+encodeURIComponent(M.mensaje||'Hola! Quiero hacer un pedido')+'">💬 Pedir por WhatsApp</a>';
+    document.getElementById('app').innerHTML=h;
+
+    var ring=document.getElementById('ring'), cur=0, rot=0;
+    function go(i){ var d=((i-cur)%n+n)%n; if(d>n/2)d-=n; rot-=d*step; cur=((i%n)+n)%n;
+      ring.style.transform='translateZ(-'+radius+'px) rotateY('+rot+'deg)';
+      [].forEach.call(ring.children,function(f,j){f.classList.toggle('on',j===cur);f.classList.toggle('dim',j!==cur)});
+      showCat(cur); }
+    ring.addEventListener('click',function(ev){var f=ev.target.closest('.face');if(f)go(+f.dataset.i)});
+    document.getElementById('prev').onclick=function(){go(cur-1)};
+    document.getElementById('next').onclick=function(){go(cur+1)};
+    // Deslizar con el dedo
+    var sx=null, stage=document.getElementById('stage');
+    stage.addEventListener('touchstart',function(ev){sx=ev.touches[0].clientX},{passive:true});
+    stage.addEventListener('touchend',function(ev){if(sx==null)return;var dx=ev.changedTouches[0].clientX-sx;if(Math.abs(dx)>35)go(cur+(dx<0?1:-1));sx=null});
+    stage.addEventListener('pointerdown',function(ev){if(ev.pointerType==='mouse')sx=ev.clientX});
+    stage.addEventListener('pointerup',function(ev){if(ev.pointerType==='mouse'&&sx!=null){var dx=ev.clientX-sx;if(Math.abs(dx)>35)go(cur+(dx<0?1:-1));sx=null}});
+
+    function showCat(i){
+      var k=cats[i], p=split(k.nombre), main=document.getElementById('main');
+      main.innerHTML='<div class="cat-title">'+p[0]+' '+e(p[1])+'</div><div class="grid">'+k.items.map(function(it,j){
+        return '<div class="item" style="animation-delay:'+(j*70)+'ms"><div class="flip">'+
+          '<div class="side front"><div class="emo">'+p[0]+'</div><div class="txt"><b>'+e(it.n)+(it.tag?'<span class="tag">'+e(it.tag)+'</span>':'')+'</b>'+(it.d?'<small>'+e(it.d)+'</small>':'<small>Tocá para ver más</small>')+'</div><div class="price">'+money(M,it.p)+'</div></div>'+
+          '<div class="side back"><p><em>'+e(it.n)+'</em>'+(it.d?' · '+e(it.d):'')+'</p><div class="row"><span style="font-weight:700">'+money(M,it.p)+'</span>'+
+          (M.whatsapp?'<a href="https://wa.me/'+e(M.whatsapp)+'?text='+encodeURIComponent('Hola! Quiero pedir: '+it.n)+'" onclick="event.stopPropagation()">Pedir este</a>':'')+'</div></div>'+
+          '</div></div>'}).join('')+'</div>'+
+        (M.credito!==false?'<footer>Menú digital hecho por <a href="https://wa.me/5493741442771?text='+encodeURIComponent('Hola! Vi un menú digital de Lyvora y quiero uno para mi negocio')+'">Lyvora</a></footer>':'');
+      [].forEach.call(main.querySelectorAll('.item'),function(el){
+        el.addEventListener('click',function(){el.classList.toggle('open')});
+        if(reduce) return;
+        el.addEventListener('pointermove',function(ev){ if(el.classList.contains('open'))return;
+          var r=el.getBoundingClientRect(), x=(ev.clientX-r.left)/r.width, y=(ev.clientY-r.top)/r.height;
+          el.querySelector('.flip').style.transform='rotateY('+((x-.5)*16)+'deg) rotateX('+((.5-y)*16)+'deg)';
+          el.querySelector('.front').style.setProperty('--gx',(x*100)+'%');el.querySelector('.front').style.setProperty('--gy',(y*100)+'%'); });
+        el.addEventListener('pointerleave',function(){ if(!el.classList.contains('open')) el.querySelector('.flip').style.transform=''; });
+        el.addEventListener('click',function(){ el.querySelector('.flip').style.transform=''; });
+      });
+      if(document.documentElement.scrollTop>250) document.getElementById('stage').scrollIntoView({behavior:reduce?'auto':'smooth',block:'start'});
+    }
+    // Profundidad del título con el movimiento (mouse o giroscopio en Android)
+    var hero=document.getElementById('hero');
+    if(!reduce){
+      addEventListener('pointermove',function(ev){hero.style.transform='rotateY('+((ev.clientX/innerWidth-.5)*14)+'deg) rotateX('+((.5-ev.clientY/innerHeight)*10)+'deg)'});
+      addEventListener('deviceorientation',function(ev){if(ev.gamma==null)return;hero.style.transform='rotateY('+Math.max(-12,Math.min(12,ev.gamma/3))+'deg) rotateX('+Math.max(-10,Math.min(10,(ev.beta-45)/4))+'deg)'});
+    }
+    go(0);
+  }
+})();
+</script>
+</body>
+</html>

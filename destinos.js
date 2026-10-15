@@ -39,7 +39,7 @@ var PLACAS = {
   "17": "https://g.page/r/CW0g4kqnPAaHEBM/review",
   "18": "",
   "19": "",
-  "20": "ChIJr9UhvNh_-ZQRpgLHqqBLskg",
+  "20": "https://search.google.com/local/writereview?placeid=ChIJr9UhvNh_-ZQRpgLHqqBLskg",
   // ---- ADESIVOS DE MESA (MENÚ) ----
   "21": "",
   "22": "",

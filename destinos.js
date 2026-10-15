@@ -20,7 +20,7 @@ var CONTADOR = "";
 var PLACAS = {
   // ---- BLANCAS ----
   "01": "",
-  "02": "",
+  "02": "https://search.google.com/local/writereview?placeid=ChIJl2DQFGB7-ZQROER78x_9cp0",
   "03": "",
   "04": "",
   "05": "",

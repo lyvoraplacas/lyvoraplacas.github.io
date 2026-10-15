@@ -34,7 +34,7 @@ var PLACAS = {
   "12": "",
   "13": "",
   "14": "",
-  "15": ""NN": "https://search.google.com/local/writereview?placeid=ChIJy3SvXzd_-ZQRolduSYinJ3Y",",
+   "15": "https://search.google.com/local/writereview?placeid=ChIJy3SvXzd_-ZQRolduSYinJ3Y",
   "16": "",
   "17": "https://g.page/r/CW0g4kqnPAaHEBM/review",
   "18": "",

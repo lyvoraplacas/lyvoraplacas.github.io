@@ -32,7 +32,7 @@ var PLACAS = {
   // ---- NEGRAS ----
   "11": "",
   "12": "https://search.google.com/local/writereview?placeid=ChIJ0YpQXL97-ZQRHXR0AG2ZHyY",
-  "13": "",
+  "13": "https://g.page/r/CUsMjX6UcGBnEBM/review",
   "14": "",
    "15": "https://search.google.com/local/writereview?placeid=ChIJy3SvXzd_-ZQRolduSYinJ3Y",
   "16": "",

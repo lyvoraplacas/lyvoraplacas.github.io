@@ -38,7 +38,7 @@ var PLACAS = {
   "16": "https://g.page/r/CblCzXC_xFN6ECE/review",
   "17": "https://g.page/r/CW0g4kqnPAaHEBM/review",
   "18": "",
-  "19": "",
+  "19": "https://search.google.com/local/writereview?placeid=ChIJZRFWTrx7-ZQR8GJP9L5PABw",
   "20": "https://search.google.com/local/writereview?placeid=ChIJr9UhvNh_-ZQRpgLHqqBLskg",
   // ---- PLACAS DE RESEÑAS (21 al 70) ----
   "21": "", "22": "", "23": "", "24": "", "25": "",

@@ -24,7 +24,7 @@ var PLACAS = {
   "03": "",
   "04": "",
   "05": "",
-  "06": "",
+  "06": "https://search.google.com/local/writereview?placeid=ChIJVymySXx7-ZQRh8H1R6l0DEs",
   "07": "",
   "08": "",
   "09": "",

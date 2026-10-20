@@ -21,7 +21,7 @@ var PLACAS = {
   // ---- BLANCAS ----
   "01": "",
   "02": "https://search.google.com/local/writereview?placeid=ChIJl2DQFGB7-ZQROER78x_9cp0",
-  "03": "",
+  "03": "https://search.google.com/local/writereview?placeid=ChIJBVZ3XQB7-ZQRI-kGR3yKuY0",
   "04": "",
   "05": "",
   "06": "https://search.google.com/local/writereview?placeid=ChIJVymySXx7-ZQRh8H1R6l0DEs",

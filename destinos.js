@@ -28,7 +28,7 @@ var PLACAS = {
   "07": "",
   "08": "",
   "09": "",
-  "10": "",
+  "10": "https://g.page/r/CW0g4kqnPAaHEAE/review",
   // ---- NEGRAS ----
   "11": "https://g.page/r/CTcyOs7F1I3hECE/review",
   "12": "https://search.google.com/local/writereview?placeid=ChIJ0YpQXL97-ZQRHXR0AG2ZHyY",

@@ -19,7 +19,7 @@ var CONTADOR = "";
 //    Si queda "" (vacío), la placa manda a tu WhatsApp.
 var PLACAS = {
   // ---- BLANCAS ----
-  "01": "",
+  "01": "https://search.google.com/local/writereview?placeid=ChIJK1_FDQB7-ZQRz7eWj5Wq8FM",
   "02": "https://search.google.com/local/writereview?placeid=ChIJl2DQFGB7-ZQROER78x_9cp0",
   "03": "https://search.google.com/local/writereview?placeid=ChIJBVZ3XQB7-ZQRI-kGR3yKuY0",
   "04": "",

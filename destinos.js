@@ -22,7 +22,7 @@ var PLACAS = {
   "01": "https://search.google.com/local/writereview?placeid=ChIJK1_FDQB7-ZQRz7eWj5Wq8FM",
   "02": "https://search.google.com/local/writereview?placeid=ChIJl2DQFGB7-ZQROER78x_9cp0",
   "03": "https://search.google.com/local/writereview?placeid=ChIJBVZ3XQB7-ZQRI-kGR3yKuY0",
-  "04": "",
+  "04": "https://g.page/r/Cce5PpGq862UECE/review",
   "05": "https://search.google.com/local/writereview?placeid=ChIJXYogVAB7-ZQRUUVT3-yaY5k",
   "06": "https://search.google.com/local/writereview?placeid=ChIJVymySXx7-ZQRh8H1R6l0DEs",
   "07": "https://search.google.com/local/writereview?placeid=ChIJBagkKD2_-ZQRaCRgTcq7Jvs",

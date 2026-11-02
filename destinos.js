@@ -37,7 +37,7 @@ var PLACAS = {
    "15": "https://search.google.com/local/writereview?placeid=ChIJy3SvXzd_-ZQRolduSYinJ3Y",
   "16": "https://g.page/r/CblCzXC_xFN6ECE/review",
   "17": "https://search.google.com/local/writereview?placeid=ChIJiWi9RgB7-ZQREPMTePgjnQ8",
-  "18": "https://g.page/r/CZEcrm7nrOhYECE/review",
+  "18": "https://g.page/r/CSXDndyZLAmjECE/review",
   "19": "https://search.google.com/local/writereview?placeid=ChIJZRFWTrx7-ZQR8GJP9L5PABw",
   "20": "https://search.google.com/local/writereview?placeid=ChIJr9UhvNh_-ZQRpgLHqqBLskg",
   // ---- PLACAS DE RESEÑAS (21 al 70) ----

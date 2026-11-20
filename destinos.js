@@ -41,7 +41,7 @@ var PLACAS = {
   "19": "https://search.google.com/local/writereview?placeid=ChIJZRFWTrx7-ZQR8GJP9L5PABw",
   "20": "https://search.google.com/local/writereview?placeid=ChIJr9UhvNh_-ZQRpgLHqqBLskg",
   // ---- PLACAS DE RESEÑAS (21 al 70) ----
-  "21": "https://g.page/r/CW0g4kqnPAaHEAE/review", "22": "https://search.google.com/local/writereview?placeid=ChIJxwXj7b57-ZQR3XKVzfnvXMk", "23": "", "24": "", "25": "",
+  "21": "https://g.page/r/CW0g4kqnPAaHEAE/review", "22": "https://search.google.com/local/writereview?placeid=ChIJxwXj7b57-ZQR3XKVzfnvXMk", "23": "https://g.page/r/Caj2XnOedd5cECE/review", "24": "", "25": "",
   "26": "", "27": "", "28": "", "29": "", "30": "",
   "31": "", "32": "", "33": "", "34": "", "35": "",
   "36": "", "37": "", "38": "", "39": "", "40": "",

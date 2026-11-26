@@ -41,7 +41,7 @@ var PLACAS = {
   "19": "https://search.google.com/local/writereview?placeid=ChIJZRFWTrx7-ZQR8GJP9L5PABw",
   "20": "https://search.google.com/local/writereview?placeid=ChIJr9UhvNh_-ZQRpgLHqqBLskg",
   // ---- PLACAS DE RESEÑAS (21 al 70) ----
-  "21": "https://g.page/r/CW0g4kqnPAaHEAE/review", "22": "https://search.google.com/local/writereview?placeid=ChIJxwXj7b57-ZQR3XKVzfnvXMk", "23": "https://g.page/r/Caj2XnOedd5cECE/review", "24": "", "25": "https://search.google.com/local/writereview?placeid=ChIJObfLc4d7-ZQRmcMiSI45X5Q",
+  "21": "https://g.page/r/CW0g4kqnPAaHEAE/review", "22": "https://search.google.com/local/writereview?placeid=ChIJxwXj7b57-ZQR3XKVzfnvXMk", "23": "https://g.page/r/Caj2XnOedd5cECE/review", "24": "https://g.page/r/CfmB7C2oSZ96ECE/review", "25": "https://search.google.com/local/writereview?placeid=ChIJObfLc4d7-ZQRmcMiSI45X5Q",
   "26": "https://search.google.com/local/writereview?placeid=ChIJabTeAwZ7-ZQR9xYzml2mvCA", "27": "https://search.google.com/local/writereview?placeid=ChIJ62ARB7B7-ZQRyxG1LT82-Bc", "28": "https://search.google.com/local/writereview?placeid=ChIJcwtL_DuB-ZQRupCu4lCov_s", "29": "https://search.google.com/local/writereview?placeid=ChIJBYn9icFz-ZQRwUJ9z9evdAg", "30": "https://g.page/r/CYzSecC2q5DDECE/review",
   "31": "", "32": "", "33": "", "34": "", "35": "",
   "36": "", "37": "", "38": "", "39": "", "40": "",
